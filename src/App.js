@@ -66,6 +66,9 @@ useEffect(() => {
               </Card>
             ))}
           </Row>
+          <Button bg="dark" type="submit" className='submit'>
+            {/* < useEffect href ={'https://pokeapi.co/api/v2/pokemon/'}/> */}
+            Get next set of Pokemons</Button>
         </Container>
     </div>
   );
