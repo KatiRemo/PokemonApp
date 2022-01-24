@@ -35,7 +35,7 @@ const PokeList = () => {
         >
 
             {isLoading && <Loader /> }
-            {isLoading &&
+            {!isLoading &&
             pokemons.map((pokemon) => (
               <PokeCard
               key={pokemon.name}

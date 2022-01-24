@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import { Nav } from 'react-bootstrap';
-// import App from '../App';
+import LinkContainer from 'react-router-bootstrap/LinkContainer';
 
 const Navigation = () => {
     return (
@@ -12,8 +12,12 @@ const Navigation = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#link">Pokemons</Nav.Link>
+                        <LinkContainer to="/">
+                            <Nav.Link href="#home">Home</Nav.Link>
+                        </LinkContainer>
+                        <LinkContainer to ="/pokemons">
+                            <Nav.Link href="#home">Pokemons</Nav.Link>
+                        </LinkContainer>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
