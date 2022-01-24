@@ -1,19 +1,24 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
+import { Nav } from 'react-bootstrap';
+// import App from '../App';
 
-const Nav = () => {
+const Navigation = () => {
     return (
-    <nav>
-        <ul>
-        <Navbar bg="danger" text="dark">
+        <Navbar bg="danger" text="dark" expand="lg">
             <Container>
-            <Navbar.Brand href="/"><strong>Home</strong></Navbar.Brand>
+                <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link href="#link">Pokemons</Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
             </Container>
       </Navbar>
-        </ul>
-    </nav>
     );
 };
 
-export default Nav;
+export default Navigation;

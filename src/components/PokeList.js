@@ -6,15 +6,12 @@ import Row from 'react-bootstrap/Row';
 import PokeCard from './PokeCard';
 import Loader from './Loader';
 
-
-
 const PokeList = () => {
     const [pokemons, setPokemons] = useState();
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         axios.get("https://pokeapi.co/api/v2/pokemon/").then((res) => { console.log(res.data);
-      
       
           const fetches = res.data.results.map((p) =>
             axios.get(p.url).then((res) => res.data)
@@ -48,7 +45,6 @@ const PokeList = () => {
             ))}
           </Row>
           <Button bg="dark" type="submit" className='submit'>
-            {/* < fetch href ={'"https://pokeapi.co/api/v2/pokemon/?offset=20&limit=20"'}/> */}
             Get next set of Pokemons</Button>
         </Container>
         </div>
