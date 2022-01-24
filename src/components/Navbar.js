@@ -6,9 +6,9 @@ const Nav = () => {
     return (
     <nav>
         <ul>
-        <Navbar bg="dark" variant="dark" >
+        <Navbar bg="danger" text="dark">
             <Container>
-            <Navbar.Brand href="/">Home</Navbar.Brand>
+            <Navbar.Brand href="/"><strong>Home</strong></Navbar.Brand>
             </Container>
       </Navbar>
         </ul>

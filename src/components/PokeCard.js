@@ -3,8 +3,8 @@ import Card from 'react-bootstrap/Card';
 
 const PokeCard = ({name, image}) => {
     return (
-            <Card bg="dark" text="light" key={name}>
-                <Card.Header>{name}</Card.Header>
+            <Card bg="danger" text="dark" key={name}>
+                <Card.Header><strong>{name}</strong></Card.Header>
                 <Card.Body>
                   <Card.Img
                   variant="top" src={image} />
