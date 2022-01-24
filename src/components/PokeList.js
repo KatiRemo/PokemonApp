@@ -7,22 +7,30 @@ import PokeCard from './PokeCard';
 import Loader from './Loader';
 
 const PokeList = () => {
-    const [pokemons, setPokemons] = useState();
+    const [pokemons, setPokemons] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [nextPokemons, setNextPokemons] = useState("https://pokeapi.co/api/v2/pokemon/");
 
     useEffect(() => {
-        axios.get("https://pokeapi.co/api/v2/pokemon/").then((res) => { console.log(res.data);
-      
+      getPokemons();  
+      }, []); 
+
+      const getPokemons = () => {
+        axios.get(nextPokemons).catch(error => {
+            console.log(error);
+        }).then((res) => { 
           const fetches = res.data.results.map((p) =>
             axios.get(p.url).then((res) => res.data)
           );
+
+          setNextPokemons(res.data.next);
       
           Promise.all(fetches).then((data) => {
-            setPokemons(data);
-            setIsLoading(false);
-          });
+            setPokemons((prevState) => [...prevState, ...data]);
         });
-      }, []); // here is the empty string for useEffect
+            setIsLoading(false);
+        });
+      }
 
     return (
         <div>
@@ -44,9 +52,10 @@ const PokeList = () => {
               />
             ))}
           </Row>
-          <Button bg="dark" type="submit" className='submit'>
-            Get next set of Pokemons</Button>
         </Container>
+        <Button variant="danger" size="lg" onClick={getPokemons}>
+            Next Pokemons
+        </Button>
         </div>
     );
 };
