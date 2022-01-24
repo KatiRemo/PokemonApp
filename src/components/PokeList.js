@@ -24,6 +24,7 @@ const PokeList = () => {
           );
 
           setNextPokemons(res.data.next);
+        //   setPreviousPokemons(res.data.next);
       
           Promise.all(fetches).then((data) => {
             setPokemons((prevState) => [...prevState, ...data]);
