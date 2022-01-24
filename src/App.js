@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import PokeList from './components/PokeList';
 import Home from './components/Home';
 import Layout from './components/Layout';
+import './app.css';
 
 const App = () => {
 
