@@ -19,6 +19,10 @@ const App = () => {
 //  }, []);
 
 useEffect(() => {
+  console.log('EFFECT IS ON')
+}, []) //first part ()=> {} is doing something and the second part is why we're doing it. Having the empty array makes sure the useEffect is not funning on infinite loop
+
+useEffect(() => {
   axios.get("https://pokeapi.co/api/v2/pokemon/").then((res) => {
     const fetches = res.data.results.map((p) =>
       axios.get(p.url).then((res) => res.data)
