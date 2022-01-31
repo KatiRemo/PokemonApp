@@ -16,7 +16,7 @@ const PokeSingle = () => {
                 <Card.Body>
                   <Card.Img
                   variant="top" src={image} />
-                  <p>{ability}</p>
+                  <p>Ability: {ability}</p>
                   </Card.Body>
         </Card>
     );
