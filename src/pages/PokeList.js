@@ -3,8 +3,8 @@ import axios from 'axios';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
-import PokeCard from './PokeCard';
-import Loader from './Loader';
+import PokeCard from '../components/PokeCard';
+import Loader from '../components/Loader';
 
 const PokeList = () => {
     const [pokemons, setPokemons] = useState([]);

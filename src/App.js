@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import PokeList from './components/PokeList';
-import Home from './components/Home';
+import PokeList from './pages/PokeList';
+import PokeSingle from './pages/PokeSingle'
+import Home from './pages/Home';
 import Layout from './components/Layout';
 import './app.css';
 
@@ -11,8 +12,9 @@ const App = () => {
     <BrowserRouter>
       <Routes >
         <Route path="/" element={<Layout/>}>
-          <Route index element={<Home/>}/>
-          <Route path="pokemons" element={<PokeList/>}/>
+          <Route index element={<Home/>} />
+          <Route path="pokemons" element={<PokeList/>} />
+          <Route path="/:pokemonName" element={<PokeSingle/>} />
         </Route>
         </Routes>
         </BrowserRouter>
