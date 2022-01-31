@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import PokeList from './pages/PokeList';
 import PokeSingle from './pages/PokeSingle'
@@ -8,12 +8,29 @@ import './app.css';
 
 const App = () => {
 
+  const [favorites, setFavorites] = useState([]);
+
+  const favHandler = (pokemon) => {
+    let item = favorites.some(item => item.name == pokemon.name);
+
+    if(!item) {
+      setFavorites(prevState => [...prevState, pokemon]);
+    }
+    else {
+      const newArr = [...favorites]; //makes copy of favorites
+      newArr.splice(newArr.findIndex(
+        item => item.name == pokemon.name), 1
+        );
+      setFavorites(newArr);  
+    }
+  };
+
   return (
     <BrowserRouter>
       <Routes >
         <Route path="/" element={<Layout/>}>
           <Route index element={<Home/>} />
-          <Route path="pokemons" element={<PokeList/>} />
+          <Route path="pokemons" element={<PokeList favHandler={favHandler} />} />
           <Route path="/:pokemonName" element={<PokeSingle/>} />
         </Route>
         </Routes>
