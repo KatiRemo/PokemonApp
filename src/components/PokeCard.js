@@ -3,14 +3,14 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import LinkContainer from 'react-router-bootstrap/LinkContainer';
 
-const PokeCard = ({name, image}) => {
+const PokeCard = ({name, image, pokemonName}) => {
     return (
             <Card bg="danger" text="dark" key={name}>
                 <Card.Header><strong>{name}</strong></Card.Header>
                 <Card.Body>
                   <Card.Img
                   variant="top" src={image} />
-                  <LinkContainer to="/pokemonName">
+                  <LinkContainer to={`/${pokemonName}`}>
                   <Button variant="outline-dark" size="sm">Details
                   </Button>
                   </LinkContainer>
