@@ -41,12 +41,21 @@ const PokeSingle = () => {
                         <li key={item.type.name}>{item.type.name}</li>
                     ))}
                     </ul>
-                    </p>
-            </div>
-            )}
-                  <Button onClick={() => navigate(-1)} variant="outline-dark" size="sm">
+                </p>
+                <p>
+                    Abilities: {" "}
+                    <ul>
+                    {pokemon.abilities.map((item) => (
+                        <li key={item.ability.name}>{item.ability.name}</li>
+                    ))}
+                    </ul>
+                </p>
+                <Button onClick={() => navigate(-1)} variant="outline-dark" size="sm">
                       Back to List
                   </Button>
+            </div>
+            )}
+               
         </div>
     );
 };

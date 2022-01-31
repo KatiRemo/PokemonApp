@@ -4,15 +4,15 @@ import Button from 'react-bootstrap/Button';
 import LinkContainer from 'react-router-bootstrap/LinkContainer';
 import {SuitHeart, SuitHeartFill} from 'react-bootstrap-icons';
 
-const PokeCard = ({name, image, pokemonName, fav}) => {
+const PokeCard = ({name, image, pokemonName, fav, favClick}) => {
     return (
             <Card bg="danger" text="dark" key={name}>
                 <Card.Header className='d-flex justify-content-between'>
                   <strong>{name}</strong>
                   {fav? (
-                    <SuitHeartFill size="25" color="black" />
+                    <SuitHeartFill onClick={favClick} size="25" color="black" />
                   ) : (
-                    <SuitHeart size="25" color="black" />
+                    <SuitHeart onClick={favClick} size="25" color="black" />
                   )}
                   </Card.Header>
                 <Card.Body>

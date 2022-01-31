@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import PokeCard from '../components/PokeCard';
 import Loader from '../components/Loader';
 
-const PokeList = () => {
+const PokeList = ({favHandler, favorites}) => {
     const [pokemons, setPokemons] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [nextPokemons, setNextPokemons] = useState("https://pokeapi.co/api/v2/pokemon/");
@@ -51,6 +51,8 @@ const PokeList = () => {
               name={pokemon.name}
               image={pokemon.sprites.other.dream_world.front_default}
               pokemonName={pokemon.name}
+              fav={favorites.some(item => item.name == pokemon.name)}
+              favClick={() => favHandler(pokemon)}
               />
             ))}
           </Row>

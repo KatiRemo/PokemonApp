@@ -5,6 +5,7 @@ import PokeSingle from './pages/PokeSingle'
 import Home from './pages/Home';
 import Layout from './components/Layout';
 import './app.css';
+import FavList from './pages/FavList';
 
 const App = () => {
 
@@ -23,6 +24,7 @@ const App = () => {
         );
       setFavorites(newArr);  
     }
+    console.log(favorites);
   };
 
   return (
@@ -31,6 +33,7 @@ const App = () => {
         <Route path="/" element={<Layout/>}>
           <Route index element={<Home/>} />
           <Route path="pokemons" element={<PokeList favHandler={favHandler} />} />
+          <Route path="favorites" element={<FavList favHandler={favHandler} favorites={favorites}/>} />
           <Route path="/:pokemonName" element={<PokeSingle/>} />
         </Route>
         </Routes>
