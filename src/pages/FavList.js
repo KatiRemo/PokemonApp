@@ -13,7 +13,7 @@ const FavList = ({favHandler, favorites}) => {
       lg={5} 
       className="justify-content-between my-5 d-flex gap-3"
     >
-        {favorites.map((pokemon) = (
+        {favorites.map((pokemon) => (
           <PokeCard
           key={pokemon.name}
           name={pokemon.name}
