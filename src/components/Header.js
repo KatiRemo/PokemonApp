@@ -22,6 +22,9 @@ const Header = () => {
                         <LinkContainer to ="/favorites">
                             <Nav.Link href="#favorites">Favorites</Nav.Link>
                         </LinkContainer>
+                        <LinkContainer to ="/about">
+                            <Nav.Link href="#about">About</Nav.Link>
+                        </LinkContainer>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

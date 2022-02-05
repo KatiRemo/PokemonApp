@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Layout from './components/Layout';
 import './app.css';
 import FavList from './pages/FavList';
+import About from './pages/About';
 
 const App = () => {
 
@@ -49,6 +50,7 @@ const App = () => {
           <Route path="pokemons" element={<PokeList favHandler={favHandler} favorites={favorites}/>} />
           <Route path="favorites" element={<FavList favHandler={favHandler} favorites={favorites}/>} />
           <Route path="/:pokemonName" element={<PokeSingle/>} />
+          <Route path="about" element={<About/>} />
         </Route>
         </Routes>
         </BrowserRouter>
