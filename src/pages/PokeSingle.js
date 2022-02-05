@@ -50,8 +50,8 @@ const PokeSingle = () => {
                     ))}
                     </ul>
                 </p>
-                <Button onClick={() => navigate(-1)} variant="outline-dark" size="sm">
-                      Back to List
+                <Button className="back" onClick={() => navigate(-1)} variant="outline-dark" size="sm">
+                      Back to Pokemons
                   </Button>
             </div>
             )}

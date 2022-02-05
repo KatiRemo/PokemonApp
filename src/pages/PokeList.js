@@ -57,7 +57,7 @@ const PokeList = ({favHandler, favorites}) => {
             ))}
           </Row>
         </Container>
-        <Button variant="danger" size="lg" onClick={getPokemons}>
+        <Button className="next" variant="outline-dark" size="lg" onClick={getPokemons}>
             Next Pokemons
         </Button>
         </div>

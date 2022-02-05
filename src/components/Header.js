@@ -7,7 +7,7 @@ import LinkContainer from 'react-router-bootstrap/LinkContainer';
 const Header = () => {
     return (
         <header>
-            <Navbar bg="danger" text="dark" expand="lg">
+            <Navbar className="nav" expand="lg">
             <Container>
                 <Navbar.Brand href="#home"></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
