@@ -13,7 +13,7 @@ const About = () => {
                 I hope you've enjoyed getting know Pokemons with the help of this app!
                 </p>
                 <p>
-                If you would like to see my other projects, please visit my <a href=" https://github.com/KatiRemo" target="_blank"><strong>GitHub</strong></a>
+                If you would like to see my other projects, please visit my <a href=" https://github.com/KatiRemo" target="_blank"><strong> GitHub </strong></a>.
             </p>
             <div className="hban">
                 <img src="https://source.unsplash.com/a5ofjvTGNnQ" alt="dragon" />
