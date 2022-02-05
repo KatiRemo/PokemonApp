@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import PokeCard from '../components/PokeCard';
 import Loader from '../components/Loader';
+import GoTop from '../components/GoTop';
 
 const PokeList = ({favHandler, favorites}) => {
     const [pokemons, setPokemons] = useState([]);
@@ -57,9 +58,12 @@ const PokeList = ({favHandler, favorites}) => {
             ))}
           </Row>
         </Container>
+        <div className="btns">
         <Button className="next" variant="outline-dark" size="lg" onClick={getPokemons}>
             Next Pokemons
         </Button>
+        <GoTop />
+        </div>
         </div>
     );
 };
